@@ -10,7 +10,7 @@ import { PrincipalComponent } from './layouts/principal/principal.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    PrincipalComponent
+    PrincipalComponent,
   ],
   imports: [
     BrowserModule,
