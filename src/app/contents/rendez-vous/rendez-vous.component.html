@@ -1,0 +1,17 @@
+<div class="w-full h-full flex flex-col space-y-4 p-4" *ngIf="isChoosingFirst">
+    <p class="mx-auto text-3xl">Choisissez une date de début :</p>
+    <mat-calendar></mat-calendar>
+    <div class="flex justify-between w-full">
+        <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" disabled>Précédent</button>
+        <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" (click)="chooseSecond()">Suivant</button>
+    </div>
+</div>
+
+<div class="w-full h-full flex flex-col space-y-4 p-4" *ngIf="isChoosingSecond">
+    <p class="mx-auto text-3xl">Choisissez une date de fin :</p>
+    <mat-calendar></mat-calendar>
+    <div class="flex justify-between w-full">
+        <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" (click)="getBack()">Précédent</button>
+        <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" (click)="submit()">Valider</button>
+    </div>
+</div>
