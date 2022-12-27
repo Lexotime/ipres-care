@@ -1,6 +1,15 @@
 <div class="w-full h-full flex flex-col space-y-4 p-4" *ngIf="isChoosingFirst">
     <p class="mx-auto text-3xl">Choisissez une date de début :</p>
-    <mat-calendar></mat-calendar>
+
+    <div class="flex flex-wrap">
+        <button (click)="onSelect(item.date)" [disabled]="!item.disponible" *ngFor="let item of events" [ngClass]="{'w-44 h-24 border p-4 m-1': true, 'border-green-400': item.disponible}" >
+            <div [ngClass]="{'text-gray-500': item.jour === 'Dimanche' || !item.disponible, 'text-green-400 font-bold': item.date === selectedFDate }">
+                <p>{{item.jour}}</p>
+                <p>{{item.date}}</p>
+            </div>
+        </button>
+    </div>
+
     <div class="flex justify-between w-full">
         <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" disabled>Précédent</button>
         <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" (click)="chooseSecond()">Suivant</button>
@@ -9,9 +18,27 @@
 
 <div class="w-full h-full flex flex-col space-y-4 p-4" *ngIf="isChoosingSecond">
     <p class="mx-auto text-3xl">Choisissez une date de fin :</p>
-    <mat-calendar></mat-calendar>
+        
+    <div class="flex flex-wrap">
+        <button (click)="onSelect(item.date)" [disabled]="!item.disponible" *ngFor="let item of events" [ngClass]="{'w-44 h-24 border p-4 m-1': true, 'border-green-400': item.disponible}" >
+            <div [ngClass]="{'text-gray-500': item.jour === 'Dimanche' || !item.disponible, 'text-green-400 font-bold': item.date === selectedSDate }">
+                <p>{{item.jour}}</p>
+                <p>{{item.date}}</p>
+            </div>
+        </button>
+    </div>
+
+
     <div class="flex justify-between w-full">
         <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" (click)="getBack()">Précédent</button>
         <button class="btn bg-red-500 text-white rounded-xl w-32 h-10 hover:bg-red-400 transition" (click)="submit()">Valider</button>
+    </div>
+</div>
+
+<div class="w-full h-full flex flex-col items-center justify-center  mt-20" *ngIf="isValidate">
+    <div class="space-y-4">
+        <p class="text-3xl text-center">Vous avez réserver pour:</p>
+        <p class="text-center">Date de début : <span class="font-bold">{{selectedFDate}}</span> </p>
+        <p class="text-center">Date de fin : <span class="font-bold">{{selectedSDate}}</span> </p>
     </div>
 </div>

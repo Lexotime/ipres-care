@@ -1,0 +1,18 @@
+<div  class="w-full h-full flex flex-col justify-between space-y-4 p-2" >
+    <p class="mx-auto text-3xl">Mes rendez-vous :</p>
+
+    <div class="flex flex-wrap">
+        <div  *ngFor="let item of events" [ngClass]="{'w-52 border p-4 m-1': true, 'border-green-400': item.disponible}" >
+            <div [ngClass]="{'text-gray-500': item.jour === 'Dimanche' || !item.disponible}">
+                <p>{{item.jour}}</p>
+                <p>{{item.date}}</p>
+                <p>nombre de patient {{item.nb_rv}} </p>
+            </div>
+            <div class="">
+
+            </div>
+            <p *ngIf="item.rv_valider">Rendez-vous valider</p>
+        </div>
+    </div>
+    
+</div>

@@ -1,3 +1,6 @@
+import { MedecinComponent } from './../medecin/medecin.component';
+import { PatientComponent } from './../patient/patient.component';
+import { AdminComponent } from './../admin/admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChoiceComponent } from 'src/app/contents/choice/choice.component';
@@ -19,11 +22,23 @@ const routes: Routes = [
     component: ChoiceComponent
   },
   {
-    path: 'connexion',
+    path: 'connexion/:id',
     component: ConnexionComponent
   },
   {
-    path: 'domaine-choice',
+    path: 'admin',
+    component: AdminComponent
+  },
+  // {
+  //   path: 'patient',
+  //   component: PatientComponent
+  // },
+  {
+    path: 'medecin',
+    component: MedecinComponent
+  },
+  {
+    path: 'patient',
     component: DomaineChoiceComponent
   },
   {

@@ -1,3 +1,4 @@
+import { EjsCalendareComponent } from './../../components/ejs-calendare/ejs-calendare.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrincipalRoutingModule } from './principal-routing.module';
@@ -11,7 +12,7 @@ import { ProfilCheckComponent } from 'src/app/contents/profil-check/profil-check
 import { ProfilUpdateComponent } from 'src/app/contents/profil-update/profil-update.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
+import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     ProfilChoiceComponent,
     RendezVousComponent,
     ProfilCheckComponent,
-    ProfilUpdateComponent
+    ProfilUpdateComponent,
+    EjsCalendareComponent
   ],
   imports: [
     CommonModule,
     PrincipalRoutingModule,
+    CalendarModule,
     MatDatepickerModule,
     MatNativeDateModule
   ]
