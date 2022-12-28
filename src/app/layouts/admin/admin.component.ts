@@ -1,3 +1,4 @@
+import { LIEU } from './../../data/dummy';
 import { EVENT, MEDECIN } from 'src/app/data/dummy';
 import { Component, OnInit } from '@angular/core';
 
@@ -21,12 +22,17 @@ export class AdminComponent implements OnInit {
   medecin!: any;
   medecins: any = MEDECIN;
 
-  annuler(item: any) {
-    this.events.filter((ev: any) => (ev.date === item))[0].disponible = false;
+
+  lieu : any = LIEU;
+  choix_lieu: any;
+
+
+  annuler(item: any, moment: string) {
+    this.events.filter((ev: any) => (ev.date === item))[0][moment].disponible = false;
   }
 
-  restaurer (item: any) {
-    this.events.filter((ev: any) => (ev.date === item))[0].disponible = true;
+  restaurer (item: any, moment: string) {
+    this.events.filter((ev: any) => (ev.date === item))[0][moment].disponible = true;
   }
 
   onChoose () {
