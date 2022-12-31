@@ -21,8 +21,8 @@ export class RendezVousComponent implements OnInit {
 
   isChoosingFirst = true;
   isChoosingSecond = false;
-  selectedFDate: any;
-  selectedSDate: any;
+  selectedFDate: any = {};
+  selectedSDate: any = {};
 
   events: any = EVENT;
 
